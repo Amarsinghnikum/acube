@@ -14,7 +14,7 @@ AcubeAvenue Technologies
             <div class="owl-carousel trending-carousel owl-theme">
                 @foreach($trending_category as $tcategory)
                 <div class="item">
-                    <a href="{{url('/view-category/'.$tcategory->slug)}}">
+                    <!-- <a href="{{url('/view-category/'.$tcategory->slug)}}"> -->
                         <div class="card">
                             <img src="{{ asset('assets/uploads/category/'.$tcategory->image)}}" height="200px"
                                 width="150px" alt="Category Image">
@@ -25,7 +25,7 @@ AcubeAvenue Technologies
                                 </p>
                             </div>
                         </div>
-                    </a>
+                    <!-- </a> -->
                 </div>
                 @endforeach
             </div>
@@ -61,21 +61,19 @@ AcubeAvenue Technologies
         <div class="row">
             <div class="col-md-4" style="margin: 10px 0px 10px 0px;">
                 <div class="footer-left">
-                    <h3>AcubeAvenue <span> Technologies</span></h3>
-
-                    <p class="footer-company-name">AcubeAvenue Technologies © 2023</p>
+                    <h3 class="header_title">AcubeAvenue <span class="header_title"> Technologies</span></h3>
                 </div>
-
+                <p class="footer-company-name">AcubeAvenue Technologies © 2023</p>
                 <div class="footer-center">
-                    <p><a href="#" class="link-1">Home</a></p>
-                    <p><a href="#">About</a></p>
-                    <p><a href="#">Contact Us</a></p>
+                    <p><a href="{{route('index')}}" class="link-1">Home</a></p>
+                    <p><a href="{{route('about')}}">About</a></p>
+                    <p><a href="{{route('contact-us')}}">Contact Us</a></p>
                 </div>
             </div>
 
             <div class="col-md-4" style="margin: 10px 0px 10px 0px;">
                 <div class="footer-right">
-                <h3>About the <span> company</span></h3>
+                <h3 class="header_title">About the <span class="header_title"> company</span></h3>
                     <p class="footer-company-about">
                         We provide a seamless platform for
                         suppliers to connect with government buyers, facilitating efficient procurement processes. Our
@@ -103,7 +101,7 @@ AcubeAvenue Technologies
                     </div>
                     <div>
 
-                        <p><i class="fa fa-phone"></i> +917992344991</p>
+                        <p><a href="tel:+917992344991"><i class="fa fa-phone"></i> +917992344991</a></p>
                     </div>
                     <div>
                         <p><a href="mailto:amitsinghnikkumbh@gmail.com"><i class="fa fa-envelope"></i>

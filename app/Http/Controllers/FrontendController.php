@@ -16,6 +16,14 @@ class FrontendController extends Controller
         return view('frontend.index', compact('featured_products', 'trending_category'));
     }
 
+    public function about(){
+        return view('frontend.about');
+    }
+
+    public function contact(){
+        return view('frontend.contact_us');
+    }
+
     public function category()
     {
         $category = Category::where('status','0')->get();

@@ -26,8 +26,8 @@
             <div style="display: flex; align-items: center;">
                 <img src="{{ asset('assets/images/logo.png') }}" alt="logo" width="50px" height="50px"
                     style="border-radius: 30px; margin-right: 10px;">
-                <a class="header-text-color" href="{{ url('/') }}"
-                    style="font-size: 40px; font-weight: bold;">AcubeAvenue Technologies</a>
+                <a class="header-text-color header_title" href="{{ url('/') }}"
+                    style="font-size: 22px; font-weight: bold;">AcubeAvenue Technologies</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="header-text-color" href="#">Contact Us</a>
+                        <a class="header-text-color" href="{{route('contact-us')}}">Contact Us</a>
                     </li>
 
                 </ul>

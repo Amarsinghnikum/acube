@@ -62,10 +62,10 @@
                     </div>
                 </a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link text-white " href="#">
+            <li class="nav-item {{ Request::is('queries') ? 'active bg-gradient-primary':'' }}">
+                <a class="nav-link text-white " href="{{ url('/queries') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">Table List</i>
+                        <i class="material-icons opacity-10">Query List</i>
                     </div>
                 </a>
             </li>
