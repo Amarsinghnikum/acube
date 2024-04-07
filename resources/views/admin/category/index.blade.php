@@ -18,21 +18,24 @@
                 </tr>
             </thead>
             <tbody>
-            @php $i=1; @endphp
+                @php $i=1; @endphp
                 @foreach($category as $item)
-                    <tr>
-                        <td>{{$i}}</td>
-                        <td>{{$item->name}}</td>
-                        <td>{{$item->description}}</td>
-                        <td>
-                            <img src="{{ asset('assets/uploads/category/'.$item->image)}}" class="cate-image" alt="Image here">
-                        </td>
-                        <td>
-                            <a href="{{ url('edit-category/'.$item->id) }}" class="btn btn-success">Edit</a>
-                            <a href="{{ url('/delete-category/'.$item->id) }}" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                    @php $i=$i+1; @endphp
+                <tr>
+                    <td>{{$i}}</td>
+                    <td>{{$item->name}}</td>
+                    <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                        {{$item->description}}
+                    </td>
+                    <td>
+                        <img src="{{ asset('assets/uploads/category/'.$item->image)}}" class="cate-image"
+                            alt="Image here">
+                    </td>
+                    <td>
+                        <a href="{{ url('edit-category/'.$item->id) }}" class="btn btn-success">Edit</a>
+                        <a href="{{ url('/delete-category/'.$item->id) }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                @php $i=$i+1; @endphp
                 @endforeach
             </tbody>
         </table>

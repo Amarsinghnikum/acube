@@ -30,6 +30,8 @@ Route::get('/dashboard',[AdminController::class, 'dashboard']);
 Route::get('/admin/logout',[AdminController::class, 'adminLogout'])->name('session.delete');
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
+Route::get('/view-category/{slug}', [FrontendController::class, 'viewcategory']);
+Route::get('/category/{cate_slug}/{id}', [FrontendController::class, 'productview']);
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/contact-us', [FrontendController::class, 'contact'])->name('contact-us');
 Route::post('/contact-store', [ContactController::class, 'contactStore'])->name('contact-store');

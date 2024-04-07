@@ -89,6 +89,17 @@ a {
     z-index: 1000;
 }
 
+.card-body p {
+    max-height: 100px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+.dark-blue {
+    color: darkblue;
+}
+
 @media (max-width: 768px) {
     .navbar .container {
         display: flex;

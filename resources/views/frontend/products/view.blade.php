@@ -7,13 +7,13 @@
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
 <div class="container">
     <h6 class="mb-0">
-        <a href="{{url('category')}}">
+        <a href="{{url('category')}}" class="dark-blue">
            Collections
         </a> / 
-        <a href="{{url('category/'.$products->category->slug)}}">
+        <a href="{{url('category/'.$products->category->slug)}}" class="dark-blue">
            {{$products->category->name}} 
         </a> / 
-        <a href="{{url('category/'.$products->category->slug.'/'.$products->slug)}}">
+        <a href="{{url('category/'.$products->category->slug.'/'.$products->slug)}}" class="dark-blue">
            {{$products->name}} 
         </a>
     </h6>
@@ -47,7 +47,7 @@
                 @else
                 <label class="badge bg-danger">Out of stock</label>
                 @endif
-                <div class="row mt-2">
+                <!-- <div class="row mt-2">
                     <div class="col-md-3">
                         <input type="hidden" value="{{ $products->id }}" class="prod_id">
                         <label for="Quantity">Quantity</label>
@@ -64,7 +64,7 @@
                       @endif
                       <button type="button" class="btn btn-success me-3 float-start">Add to Wishlist</button>
                     </div>
-                </div>
+                </div> -->
             </div>
            </div>
         </div>

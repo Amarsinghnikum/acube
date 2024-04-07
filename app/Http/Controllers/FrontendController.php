@@ -34,9 +34,14 @@ class FrontendController extends Controller
     {
         if(Category::where('slug', $slug)->exists())
         {
-            $category = Category::where('slug', $slug)->first();
-            $products = Product::where('cate_id', $category->id)->get();
-            return view('frontend.products.index', compact('category','products'));
+            $category = Category::where('slug', $slug)->pluck('id','name');
+            $products = Product::select('products.*', 'category.name as category_name')
+                ->join('category', 'category.id', '=', 'products.cate_id')
+                ->whereIn('products.cate_id', $category)
+                ->get();
+
+            $categoryNames = $products->pluck('category_name')->unique()->toArray();
+            return view('frontend.products.index', compact('category','products','categoryNames'));
         }
         else
         {
@@ -44,13 +49,13 @@ class FrontendController extends Controller
         }
     }
 
-    public function productview($cate_slug, $prod_slug)
+    public function productview($cate_slug, $id)
     {
         if(Category::where('slug', $cate_slug)->exists())
         {
-            if(Product::where('slug',$prod_slug)->exists())
+            if(Product::where('id',$id)->exists())
             {
-                $products = Product::where('slug', $prod_slug)->first();
+                $products = Product::where('id', $id)->first();
                 return view('frontend.products.view', compact('products'));
             }
             else{

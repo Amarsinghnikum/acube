@@ -23,11 +23,6 @@
 
             <div class="row">
                 <div class="col-md-6">
-                <label class="categorylabel">Small Description</label>
-                    <textarea name="description" rows="3" class="form-control"></textarea>
-                </div>
-
-                <div class="col-md-6">
                 <label class="categorylabel">Description</label>
                     <textarea name="description" rows="3" class="form-control"></textarea>
                 </div>

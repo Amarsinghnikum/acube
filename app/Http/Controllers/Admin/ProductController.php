@@ -50,8 +50,9 @@ class ProductController extends Controller
 
     public function edit($id)
     {
+        $categories = Category::get();
         $products = Product::find($id);
-        return view('admin.product.edit', compact('products'));
+        return view('admin.product.edit', compact('products','categories'));
     }
 
     public function update(Request $request, $id)
@@ -70,7 +71,8 @@ class ProductController extends Controller
             $file->move('assets/uploads/products/',$filename);
             $products->image = $filename;
         }
-    
+
+        $products->cate_id = $request->input('cate_id');
         $products->name = $request->input('name');
         $products->slug = $request->input('slug');
         $products->description = $request->input('description');

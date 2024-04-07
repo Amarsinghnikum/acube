@@ -14,7 +14,7 @@ AcubeAvenue Technologies
             <div class="owl-carousel trending-carousel owl-theme">
                 @foreach($trending_category as $tcategory)
                 <div class="item">
-                    <!-- <a href="{{url('/view-category/'.$tcategory->slug)}}"> -->
+                    <a href="{{url('/view-category/'.$tcategory->slug)}}">
                         <div class="card">
                             <img src="{{ asset('assets/uploads/category/'.$tcategory->image)}}" height="200px"
                                 width="150px" alt="Category Image">
@@ -25,7 +25,7 @@ AcubeAvenue Technologies
                                 </p>
                             </div>
                         </div>
-                    <!-- </a> -->
+                    </a>
                 </div>
                 @endforeach
             </div>
